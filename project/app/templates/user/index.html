@@ -1,0 +1,20 @@
+{% extends 'user/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Значения</title>
+</head>
+<body>
+{% block 'content' %}
+{% for i in people %}
+    {{ i.name }}<br>
+{{ i.age }}<br>
+{{ i.birthDay }}<br>
+<a href="{% url 'update' i.id %}">Редактировать</a>
+<a href="{% url 'delete' i.id %}">Удалить</a>
+<hr>
+{% endfor %}
+{% endblock %}
+</body>
+</html>
